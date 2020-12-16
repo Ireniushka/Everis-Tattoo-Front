@@ -1,0 +1,33 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductService {
+
+  constructor(private http : HttpClient) { }
+
+  endPoint: string = 'http://localhost:8080/everis/tattoo/';
+
+  getAllProducts(): Observable<any>{
+    return this.http.get(this.endPoint);
+  }
+
+  getProduct(id: number): Observable<any> {
+    return this.http.get(this.endPoint + id);
+  }
+
+  addProduct(product: Object): void {
+    this.http.post(this.endPoint, product)
+      .subscribe(
+        () => {window.location.reload},
+        error => {console.log(error)});
+  }
+
+  deleteProduct(id: number): Observable<any>{
+    return this.http.delete(this.endPoint + id);
+  }
+
+}
