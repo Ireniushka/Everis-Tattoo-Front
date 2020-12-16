@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   endPoint: string = 'http://localhost:8080/everis/tattoo/';
 
