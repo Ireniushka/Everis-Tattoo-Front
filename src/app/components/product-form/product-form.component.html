@@ -1,0 +1,21 @@
+<form id="contactForm" [formGroup]="form">
+    <mat-form-field>
+      <input matInput placeholder="name" formControlName="name" class="form-control"  name="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Introduce aquí la categoría" formControlName="category" class="form-control"  name="category">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea rows="4" cols="50" matInput placeholder="Introduce aquí la descripción" formControlName="description" class="form-control"  name="description"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Introduce aquí el precio" formControlName="price" class="form-control"  name="price">
+    </mat-form-field>
+    <br>
+    <!-- Imagen falta -->
+
+    <button id="btnSearch" mat-raised-button type="submit" color="primary" (click)="searchProduct()">Buscar</button><p>|</p><button id="btnAdd" mat-raised-button type="submit" color="secundary" (click)="addProduct()">Agregar</button>
+</form>
