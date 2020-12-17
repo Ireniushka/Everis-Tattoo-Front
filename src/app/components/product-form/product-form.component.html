@@ -1,31 +1,32 @@
-<form id="contactForm" [formGroup]="form">
-    <label>Nombre: </label>
+<h3 class="ms-1">Introduce un producto nuevo</h3>
+<form id="contactForm" [formGroup]="form" class="ms-2">
+    <label class="mt-3">Nombre: </label>
     <input placeholder="Introduce el nombre" formControlName="name" class="form-control"  name="name">
     
-    <label for="Selection">Categoría: </label>
+    <label class="mt-3" for="Selection">Categoría: </label>
     <select id="Selection" class="form-control" formControlName="category">
-        <option>Máquinas</option>
-        <option>Tintas</option>
-        <option>Agujas</option>
-        <option>Kits</option>
-        <option>Otros</option>
+        <option selected value="Máquinas">Máquinas</option>
+        <option value="Tintas">Tintas</option>
+        <option value="Agujas">Agujas</option>
+        <option value="Kits">Kits</option>
+        <option value="Otros">Otros</option>
     </select>
 
-    <label>Descripción: </label>
-    <textarea rows="4" cols="50" placeholder="Introduce aquí la descripción" formControlName="description" class="form-control"  name="description"></textarea>
+    <label class="mt-3">Descripción: </label>
+    <textarea rows="2" cols="50" placeholder="Introduce aquí la descripción" formControlName="description" class="form-control"  name="description"></textarea>
 
 
-    <label>Precio: </label>
+    <label class="mt-3">Precio: </label>
     <input placeholder="Introduce aquí el precio" formControlName="price" class="form-control"  name="price">
 
-    <label>Imagen: </label>
-    <input placeholder="Introduce aquí el precio" formControlName="img" class="form-control"  name="price">
+    <label class="mt-3">Imagen: </label>
+    <input placeholder="Introduce aquí la imagen" formControlName="img" class="form-control"  name="img">
 
-    <button id="btnAdd" type="submit" class="btn btn-dark" *ngIf="form.valid" (click)="addProduct()">Agregar</button>
+    <button class="mt-3" id="btnAdd" type="submit" class="btn btn-dark" (click)="addProduct()">Agregar</button>
 </form>
 
-<div class="container">
-    <p>Buscar producto por id:</p>
+<div class="container" class="mt-5">
+    <h3>Buscar producto por id:</h3>
     <input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
     <button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
 </div>

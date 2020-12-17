@@ -11,9 +11,7 @@ export class ProductFormComponent implements OnInit {
 
   id;
 
-  productService: ProductService;
-
-  constructor(private formBuilder: FormBuilder){  }
+  constructor(private formBuilder: FormBuilder, private productService: ProductService){  }
 
   form = this.formBuilder.group({
     name: ['', Validators.required],
