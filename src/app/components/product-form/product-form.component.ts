@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../../services/product/product.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class ProductFormComponent implements OnInit {
   id: number;
   form: FormGroup;
 
-  constructor(private productService: ProductService, private formBuilder: FormBuilder){  }
+  constructor(private productService: ProductService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -29,7 +29,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   addProduct(): void {
-    this.productService.addProduct(this.form);
+    this.productService.addProduct(this.form.value);
   }
 
   sendImg(e: Event): void {
