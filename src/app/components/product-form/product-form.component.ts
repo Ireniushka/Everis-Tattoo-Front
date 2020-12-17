@@ -9,7 +9,7 @@ import { ProductService } from '../../services/product/product.service';
 })
 export class ProductFormComponent implements OnInit {
 
-  id: number;
+  id: string;
   form: FormGroup;
 
   constructor(private productService: ProductService, private formBuilder: FormBuilder){  }

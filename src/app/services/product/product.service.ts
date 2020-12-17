@@ -15,7 +15,7 @@ export class ProductService {
     return this.http.get(this.endPoint);
   }
 
-  getProduct(id: number): Observable<any> {
+  getProduct(id: string): Observable<any> {
     return this.http.get(this.endPoint + id);
   }
 
@@ -26,7 +26,7 @@ export class ProductService {
         error => {console.log(error)});
   }
 
-  deleteProduct(id: number): void {
+  deleteProduct(id: string): void {
     this.http.delete(this.endPoint + id)
       .subscribe(
         () => {window.location.reload},

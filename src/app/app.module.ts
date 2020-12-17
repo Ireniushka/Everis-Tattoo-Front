@@ -7,16 +7,20 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './components/product/product.component';
+import { AppRoutingModule } from './app-routing.module';
+import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductFormComponent,
-    ProductComponent
+    ProductComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
   ],
