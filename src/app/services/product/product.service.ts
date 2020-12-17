@@ -22,14 +22,14 @@ export class ProductService {
   addProduct(product: Object): void {
     this.http.post(this.endPoint, product)
       .subscribe(
-        () => {window.location.reload},
+        () => {window.location.reload()},
         error => {console.log(error)});
   }
 
   deleteProduct(id: string): void {
     this.http.delete(this.endPoint + id)
       .subscribe(
-        () => {window.location.reload},
+        () => {window.location.reload()},
         error => {console.log(error)});
   }
 

@@ -7,8 +7,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './components/product/product.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { IndexComponent } from './components/index/index.component';
     ProductsComponent,
     ProductFormComponent,
     ProductComponent,
-    IndexComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
