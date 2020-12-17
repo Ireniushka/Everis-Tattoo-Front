@@ -24,11 +24,11 @@ export class ProductFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getProduct() {
+  getProduct(): void {
     this.productService.getProduct(this.id);
   }
 
-  addProduct() {
+  addProduct(): void {
     this.productService.addProduct(this.form);
   }
 
