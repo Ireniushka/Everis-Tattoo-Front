@@ -10,8 +10,18 @@ export class ProductsComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
 
-  ngOnInit(): void {
+  products: any[];
 
+  ngOnInit(): void {
+    this.productService.getAllProducts()
+      .subscribe(
+        res => {this.products = res},
+        error => {console.log(error)}
+      );
+  }
+
+  deleteProduct(id: number) {
+    this.productService.deleteProduct(id);
   }
 
 }

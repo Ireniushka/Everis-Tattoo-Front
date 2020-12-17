@@ -26,8 +26,11 @@ export class ProductService {
         error => {console.log(error)});
   }
 
-  deleteProduct(id: number): Observable<any>{
-    return this.http.delete(this.endPoint + id);
+  deleteProduct(id: number): void {
+    this.http.delete(this.endPoint + id)
+      .subscribe(
+        () => {window.location.reload},
+        error => {console.log(error)});
   }
 
 }
