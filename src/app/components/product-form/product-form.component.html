@@ -1,21 +1,32 @@
 <form id="contactForm" [formGroup]="form">
-    <mat-form-field>
-      <input matInput placeholder="name" formControlName="name" class="form-control"  name="name">
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <input matInput placeholder="Introduce aquí la categoría" formControlName="category" class="form-control"  name="category">
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <textarea rows="4" cols="50" matInput placeholder="Introduce aquí la descripción" formControlName="description" class="form-control"  name="description"></textarea>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <input matInput placeholder="Introduce aquí el precio" formControlName="price" class="form-control"  name="price">
-    </mat-form-field>
-    <br>
+    <label>Nombre: </label>
+    <input placeholder="Introduce el nombre" formControlName="name" class="form-control"  name="name">
+
+
+    <label>Categoría: </label>
+    <input placeholder="Elige la categoría" list="datalistOptions" formControlName="category" class="form-control"  name="category">
+    <datalist id="datalistOptions">
+        <option value="Máquinas">
+        <option value="Tintas">
+        <option value="Agujas">
+        <option value="Kits">
+        <option value="Otros">
+        </datalist>
+
+    <label>Descripción: </label>
+    <textarea rows="4" cols="50" placeholder="Introduce aquí la descripción" formControlName="description" class="form-control"  name="description"></textarea>
+
+
+    <label >Precio: </label>
+    <input placeholder="Introduce aquí el precio" formControlName="price" class="form-control"  name="price">
+
     <!-- Imagen falta -->
 
-    <button id="btnSearch" mat-raised-button type="submit" color="primary" (click)="searchProduct()">Buscar</button><p>|</p><button id="btnAdd" mat-raised-button type="submit" color="secundary" (click)="addProduct()">Agregar</button>
+    <button id="btnAdd" type="submit" class="btn btn-dark" *ngIf="form.valid" (click)="addProduct()">Agregar</button>
 </form>
+
+<div class="container">
+    <p>Buscar producto por id:</p>
+    <input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
+    <button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
+</div>

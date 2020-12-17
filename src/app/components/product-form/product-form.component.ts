@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
+import { ProductService } from '../../services/product/product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -7,33 +8,28 @@ import {FormBuilder} from '@angular/forms';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-  form;
 
-  constructor(private formBuilder: FormBuilder){
-    this.form = formBuilder.group({
-      name: [''],
-      category: [''],
-      description: [''],
-      price: [''],
-      //img: [''],
-    });
-  }
+  productService: ProductService;
+
+  constructor(private formBuilder: FormBuilder){  }
+
+  form = this.formBuilder.group({
+    name: ['', Validators.required],
+    category: ['', Validators.required],
+    description: [''],
+    price: ['', Validators.required],
+    img: [''],
+  });
 
   ngOnInit(): void {
   }
 
-  searchProduct() {
-    console.log(this.form.value);
-    //hacer push // creamos interfaz producto?
+  getProduct() {
+    //this.productService.getProduct(id);
   }
 
   addProduct() {
-    if (this.form.valid) {
-      console.log(this.form.value);
-    }
-    else{
-      alert("Rellene todos los campos, por favor");
-    }
+    this.productService.addProduct(this.form);
   }
 
 
