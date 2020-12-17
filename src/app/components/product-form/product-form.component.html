@@ -22,12 +22,10 @@
     <label class="mt-3">Imagen: </label>
     <input placeholder="Introduce aquí la imagen" formControlName="img" class="form-control"  name="img">
 
-    <button class="mt-3" id="btnAdd" type="submit" class="btn btn-dark" (click)="addProduct()">Agregar</button>
+    <button class="mt-3" id="btnAdd" type="submit" class="btn btn-dark"  [disabled]="form.invalid" (click)="addProduct()">Agregar</button>
 </form>
 
-<div class="container" class="mt-5">
-    <h3>Buscar producto por id:</h3>
-    <input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
-    <button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
-</div>
-</div>
+<h3 class="mt-5">Buscar producto por id:</h3>
+<input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
+<button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
+
