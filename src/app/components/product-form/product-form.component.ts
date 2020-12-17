@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ProductService } from '../../services/product/product.service';
 
 @Component({
@@ -9,19 +9,19 @@ import { ProductService } from '../../services/product/product.service';
 })
 export class ProductFormComponent implements OnInit {
 
-  id;
+  id: number;
+  form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private productService: ProductService){  }
-
-  form = this.formBuilder.group({
-    name: ['', Validators.required],
-    category: ['', Validators.required],
-    description: [''],
-    price: ['', Validators.required],
-    img: [''],
-  });
+  constructor(private productService: ProductService, private formBuilder: FormBuilder){  }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      category: ['', Validators.required],
+      description: [''],
+      price: ['', Validators.required],
+      img: ['']
+    });
   }
 
   getProduct(): void {
@@ -32,5 +32,7 @@ export class ProductFormComponent implements OnInit {
     this.productService.addProduct(this.form);
   }
 
+  sendImg(e: Event): void {
+  }
 
 }
