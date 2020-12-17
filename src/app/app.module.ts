@@ -15,12 +15,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ProductsComponent,
     ProductFormComponent,
     ProductComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

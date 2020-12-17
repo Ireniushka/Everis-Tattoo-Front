@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
       );
   }
 
-  deleteProduct(id: number) {
+  deleteProduct(id: string) {
     this.productService.deleteProduct(id);
   }
 
