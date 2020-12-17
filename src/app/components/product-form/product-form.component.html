@@ -1,9 +1,10 @@
 <form id="contactForm" [formGroup]="form">
     <label>Nombre: </label>
-    <input placeholder="Introduce el nombre" formControlName="name" class="form-control"  name="name">
+    <input placeholder="Introduce el nombre" class="form-control"  name="name"
+    formControlName="name">
     
     <label for="Selection">Categoría: </label>
-    <select id="Selection" class="form-control" formControlName="category">
+    <select id="Selection" placeholder="Introduce el nombre" class="form-control" formControlName="category">
         <option>Máquinas</option>
         <option>Tintas</option>
         <option>Agujas</option>
@@ -12,20 +13,22 @@
     </select>
 
     <label>Descripción: </label>
-    <textarea rows="4" cols="50" placeholder="Introduce aquí la descripción" formControlName="description" class="form-control"  name="description"></textarea>
+    <textarea rows="4" cols="50" placeholder="Introduce aquí la descripción" class="form-control"  name="description"
+    formControlName="description"></textarea>
 
 
     <label>Precio: </label>
-    <input placeholder="Introduce aquí el precio" formControlName="price" class="form-control"  name="price">
+    <input placeholder="Introduce aquí el precio" class="form-control" name="price"
+    formControlName="price">
 
     <label>Imagen: </label>
-    <input placeholder="Introduce aquí el precio" formControlName="img" class="form-control"  name="price">
+    <input placeholder="Introduce aquí el precio" class="form-control" name="price"
+    formControlName="img">
 
-    <button id="btnAdd" type="submit" class="btn btn-dark" *ngIf="form.valid" (click)="addProduct()">Agregar</button>
+    <button id="btnAdd" type="submit" class="btn btn-dark"
+    [disabled]="form.invalid" (click)="addProduct()">Agregar</button>
 </form>
 
-<div class="container">
-    <p>Buscar producto por id:</p>
-    <input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
-    <button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
-</div>
+<p>Buscar producto por id:</p>
+<input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
+<button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
