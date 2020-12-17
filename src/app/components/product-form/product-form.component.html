@@ -1,4 +1,4 @@
-<form id="contactForm" [formGroup]="form">
+<form [formGroup]="form">
     <label>Nombre: </label>
     <input placeholder="Introduce el nombre" class="form-control"  name="name"
     formControlName="name">
@@ -22,13 +22,14 @@
     formControlName="price">
 
     <label>Imagen: </label>
-    <input placeholder="Introduce aquí el precio" class="form-control" name="price"
-    formControlName="img">
+    <input id="imgFile" type="file" name="img" (click)="sendImg($event)" formControlName="img">
 
     <button id="btnAdd" type="submit" class="btn btn-dark"
     [disabled]="form.invalid" (click)="addProduct()">Agregar</button>
 </form>
 
 <p>Buscar producto por id:</p>
-<input placeholder="Introduce id a buscar" formControlName="id" class="form-control"  name="id">
+<input placeholder="Introduce id a buscar" class="form-control"  name="id">
 <button id="btnSearch" type="button" class="btn btn-dark" (click)="getProduct()">Buscar</button>    
+
+
