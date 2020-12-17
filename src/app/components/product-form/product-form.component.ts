@@ -32,7 +32,4 @@ export class ProductFormComponent implements OnInit {
     this.productService.addProduct(this.form.value);
   }
 
-  sendImg(e: Event): void {
-  }
-
 }

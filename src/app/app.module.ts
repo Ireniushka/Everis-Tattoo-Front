@@ -8,7 +8,6 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './components/product/product.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +15,12 @@ import { AppRoutingModule } from './app-routing.module';
     ProductsComponent,
     ProductFormComponent,
     ProductComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
