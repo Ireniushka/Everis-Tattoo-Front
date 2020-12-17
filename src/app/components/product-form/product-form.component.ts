@@ -9,6 +9,8 @@ import { ProductService } from '../../services/product/product.service';
 })
 export class ProductFormComponent implements OnInit {
 
+  id;
+
   productService: ProductService;
 
   constructor(private formBuilder: FormBuilder){  }
@@ -25,7 +27,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   getProduct() {
-    //this.productService.getProduct(id);
+    this.productService.getProduct(this.id);
   }
 
   addProduct() {
